@@ -1,0 +1,142 @@
+{
+  "1": {
+    "question": "What is your preferred language?",
+    "subtitle": "Choose language",
+    "entity": "single-select",
+    "options": [
+      {
+        "value": "en",
+        "label": "English"
+      },
+      {
+        "value": "fr",
+        "label": "French"
+      },
+      {
+        "value": "de",
+        "label": "German"
+      },
+      {
+        "value": "sp",
+        "label": "Spain"
+      }
+    ]
+  },
+  "2": {
+    "question": "What gender do you identify with?",
+    "subtitle": "Please share how do you identify yourself",
+    "entity": "single-select-image",
+    "options": [
+      {
+        "value": "female",
+        "label": "Female"
+      },
+      {
+        "value": "male",
+        "label": "Male"
+      },
+      {
+        "value": "other",
+        "label": "Other"
+      }
+    ]
+  },
+  "3": {
+    "question": "What is your age?",
+    "subtitle": "",
+    "entity": "single-select",
+    "options": [
+      {
+        "value": "18-29",
+        "label": "18-29 years"
+      },
+      {
+        "value": "30-39",
+        "label": "30-39 years"
+      },
+      {
+        "value": "40-49",
+        "label": "40-49 years"
+      },
+      {
+        "value": "50+",
+        "label": "50+"
+      }
+    ]
+  },
+  "4": {
+    "question": "What do you hate the most in a book?",
+    "subtitle": "",
+    "entity": "multiple-select",
+    "options": [
+      {
+        "value": "lack of logic",
+        "label": "Lack of Logic"
+      },
+      {
+        "value": "a slow speed",
+        "label": "A slow speed"
+      },
+      {
+        "value": "lack of humor",
+        "label": "Lack of Humor"
+      },
+      {
+        "value": "way to generic ending",
+        "label": "Way to generic ending"
+      }
+    ]
+  },
+  "5": {
+    "question": "What are your favourite topics?",
+    "subtitle": "Choose up to 3 topics you like",
+    "entity": "bubble-select",
+    "options": [
+      {
+        "value": "werewolf",
+        "label": "Werewolf"
+      },
+      {
+        "value": "action",
+        "label": "Action"
+      },
+      {
+        "value": "royal obsession",
+        "label": "Royal Obsession"
+      },
+      {
+        "value": "romance",
+        "label": "Romance"
+      },
+      {
+        "value": "young adult",
+        "label": "Young Adult"
+      },
+      {
+        "value": "bad boy",
+        "label": "Bad Boy"
+      },
+      {
+        "value": "billionaire",
+        "label": "Billionaire"
+      }
+    ]
+  },
+  "loader": {
+    "label": "Finding collection for <br/> you..."
+  },
+  "email": {
+    "title": "Email",
+    "subtitle": "Enter your email to get full access",
+    "placeholder": "Your email",
+    "policy": "By continuing I agree with <a href=\"#\" className=\"form-link\">Privacy policy</a> and <a href=\"#\" className=\"form-link\">Terms of use.</a>",
+    "error": "Invalid email"
+  },
+  "thankyou": {
+    "title": "Thank you",
+    "subtitle": "for supporting us and passing quiz",
+    "download": "Download my answers"
+  },
+  "nextButton": "Next",
+  "retakeQuiz": "Retake quiz"
+}

@@ -1,0 +1,142 @@
+{
+  "1": {
+    "question": "¿Cuál es tu idioma preferido?",
+    "subtitle": "Elige el idioma",
+    "entity": "single-select",
+    "options": [
+      {
+        "value": "en",
+        "label": "Inglés"
+      },
+      {
+        "value": "fr",
+        "label": "Francés"
+      },
+      {
+        "value": "de",
+        "label": "Alemán"
+      },
+      {
+        "value": "sp",
+        "label": "Español"
+      }
+    ]
+  },
+  "2": {
+    "question": "¿Con qué género te identificas?",
+    "subtitle": "Por favor, comparte cómo te identificas",
+    "entity": "single-select-image",
+    "options": [
+      {
+        "value": "female",
+        "label": "Femenino"
+      },
+      {
+        "value": "male",
+        "label": "Masculino"
+      },
+      {
+        "value": "other",
+        "label": "Otro"
+      }
+    ]
+  },
+  "3": {
+    "question": "¿Cuál es tu edad?",
+    "subtitle": "",
+    "entity": "single-select",
+    "options": [
+      {
+        "value": "18-29",
+        "label": "18-29 años"
+      },
+      {
+        "value": "30-39",
+        "label": "30-39 años"
+      },
+      {
+        "value": "40-49",
+        "label": "40-49 años"
+      },
+      {
+        "value": "50+",
+        "label": "50+"
+      }
+    ]
+  },
+  "4": {
+    "question": "¿Qué es lo que más odias en un libro?",
+    "subtitle": "",
+    "entity": "multiple-select",
+    "options": [
+      {
+        "value": "lack of logic",
+        "label": "Falta de lógica"
+      },
+      {
+        "value": "a slow speed",
+        "label": "Velocidad lenta"
+      },
+      {
+        "value": "lack of humor",
+        "label": "Falta de humor"
+      },
+      {
+        "value": "way to generic ending",
+        "label": "Final demasiado genérico"
+      }
+    ]
+  },
+  "5": {
+    "question": "¿Cuáles son tus temas favoritos?",
+    "subtitle": "Elige hasta 3 temas que te gusten",
+    "entity": "bubble-select",
+    "options": [
+      {
+        "value": "werewolf",
+        "label": "Hombre lobo"
+      },
+      {
+        "value": "action",
+        "label": "Acción"
+      },
+      {
+        "value": "royal obsession",
+        "label": "Obsesión real"
+      },
+      {
+        "value": "romance",
+        "label": "Romance"
+      },
+      {
+        "value": "young adult",
+        "label": "Joven adulto"
+      },
+      {
+        "value": "bad boy",
+        "label": "Chico malo"
+      },
+      {
+        "value": "billionaire",
+        "label": "Billonario"
+      }
+    ]
+  },
+  "loader": {
+    "label": "Buscando colección para <br /> ti..."
+  },
+  "email": {
+    "title": "Correo electrónico",
+    "subtitle": "Ingrese su correo electrónico para obtener acceso completo",
+    "placeholder": "Tu correo electrónico",
+    "policy": "Al continuar, acepto la <a href=\"#\" className=\"form-link\">Política de privacidad</a> y los <a href=\"#\" className=\"form-link\">Términos de uso</a>.",
+    "error": "Correo electrónico no válido"
+  },
+  "thankyou": {
+    "title": "Gracias",
+    "subtitle": "por tu apoyo y por pasar el cuestionario",
+    "download": "Descargar mis respuestas"
+  },
+  "nextButton": "Siguiente",
+  "retakeQuiz": "Repetir quiz"
+}

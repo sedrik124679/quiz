@@ -1,0 +1,470 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+
+  box-sizing: border-box;
+
+  font-family: Albert Sans;
+
+  background-color: #1f002b;
+  color: #E8EAF2;
+}
+
+main {
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.progress-bar-container {
+  padding-top: 40px;
+}
+
+.progress-bar-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 20px;
+
+  span {
+    color: #e4229c;
+  }
+
+  img {
+    cursor: pointer
+  }
+}
+
+.progress-bar-background {
+  background: #e8eaf2;
+  border-radius: 5px;
+  height: 10px;
+  width: 100%;
+  margin-top: 13px;
+}
+
+.progress-bar-fill {
+  background: #e4229c;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.single-select-container {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nunito Sans';
+
+  .single-select-option {
+    background-color: #36173d;
+    border-radius: 16px;
+    padding: 18px 20px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
+  }
+}
+
+.multiple-select-container {
+  height: 100%;
+  position: relative;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nunito Sans';
+  gap: 12px;
+
+  .multiple-select-option {
+    display: flex;
+    justify-content: space-between;
+    background-color: #36173d;
+    border-radius: 16px;
+    padding: 21px 20px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .multiple-select-checkbox {
+    display: none;
+  }
+
+  .multiple-select-checkbox + .multiple-select-checkbox-box {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    background: #6D4376;
+    border: 1px solid #E4229B;
+    margin-right: 10px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .multiple-select-checkbox:checked + .multiple-select-checkbox-box {
+    background: #E4229B;
+    border-color: #E4229B;
+  }
+
+  .multiple-select-option-selected {
+    background: #470741;
+    outline: 2px solid #E4229B;
+  }
+
+  .multiple-select-checkbox:checked + .multiple-select-checkbox-box::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.single-select-image {
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+  font-family: "Nunito Sans";
+
+  .single-select-image-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #36173d;
+    border-radius: 12px;
+    padding: 32px 24px;
+    gap: 10px;
+    width: 300px;
+
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+
+    .single-select-image-label {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+}
+
+.select-button {
+  position: absolute;
+
+  width: calc(100% - 40px);
+
+  bottom: 20px;
+
+  box-sizing: border-box;
+
+  background: #E4229C;
+  border-radius: 100px;
+  padding: 16px;
+  gap: 4px;
+
+  color: #FFFFFF;
+
+  font-weight: 800;
+  font-size: 17px;
+  font-family: "Albert Sans";
+  line-height: 24px;
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.select-button:disabled {
+  opacity: 40%;
+  cursor: not-allowed;
+}
+
+.bubble-select {
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-select-container {
+  display: flex;
+  gap: 8px;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  min-height: 260px;
+
+  .selected {
+    outline: 2px solid #E4229B;
+  }
+
+  .option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+
+    .option {
+      border-radius: 50%;
+      background: #36173D;
+      padding: 18px 8px 23px 8px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 88px;
+      min-height: 88px;
+      max-width: 88px;
+      max-height: 88px;
+      gap: 6px;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      img {
+        width: 25px;
+        height: 25px;
+      }
+
+      span {
+        font-size: 13px;
+        font-weight: 600;
+        font-family: "Nunito Sans";
+        word-break: break-word;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.loader-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h5 {
+    font-family: Albert Sans;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+    line-height: 25px;
+  }
+  .spinner-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .circular-progress {
+      position: relative;
+      height: 252px;
+      width: 252px;
+
+      border-radius: 50%;
+      background: conic-gradient(#E4229C 3.6deg, #e8eaf2 0deg);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circular-progress::before {
+      content: "";
+      position: absolute;
+      height: 225px;
+      width: 225px;
+      border-radius: 50%;
+      background: #1f002b;
+    }
+
+    .progress-value {
+      position: relative;
+      font-size: 52px;
+      font-family: "Albert Sans";
+      font-weight: 800;
+    }
+  }
+}
+
+.question-title {
+  font-family: 'Nunito Sans';
+  font-size: 28px;
+  text-align: center;
+  color: #f2f3f5;
+  padding-top: 45px;
+  line-height: 34px;
+}
+
+.question-subtitle {
+  font-family: 'Nunito Sans';
+  font-size: 17px;
+  text-align: center;
+  color: #C4C8CC;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-container {
+  margin-top: 16px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.form-container {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-title {
+    font-family: 'Nunito Sans';
+    font-size: 28px;
+    text-align: center;
+    color: #f2f3f5;
+    padding-top: 45px;
+    line-height: 34px;
+  }
+
+  .form-error {
+    color: red;
+    font-size: 12px;
+
+    display: flex;
+    align-self: flex-start;
+    margin-top: 5px;
+  }
+
+  .form-subtitle {
+    font-family: 'Nunito Sans';
+    font-size: 17px;
+    text-align: center;
+    color: #C4C8CC;
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-input {
+    margin-top: 56px;
+    padding: 21px 20px;
+    border-radius: 16px;
+    background: #36173D;
+    color: #ffffff;
+    font-family: "Albert Sans";
+    font-size: 17px;
+    outline: none;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: 2px solid #E4229C;
+    }
+  }
+
+  .input-error {
+    outline: 2px solid red;
+  }
+
+  .form-privacy {
+    margin-top: 56px;
+    text-align: center;
+    font-family: "Albert Sans";
+    font-size: 12px;
+    color: #B6B8C3;
+    font-weight: 500;
+    max-width: 280px;
+
+    .form-link {
+      text-decoration: none;
+      color: #EB2F9A;
+    }
+  }
+}
+
+.thanku-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ECECFB;
+
+  .title {
+    font-family: Niconne;
+    font-size: 36px;
+    font-weight: 400;
+    padding-top: 100px;
+  }
+  .subtitle {
+    font-family: Albert Sans;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .checkmark {
+    margin-top: 62px;
+  }
+  .download {
+    position: absolute;
+    bottom: 105px;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    img {
+      margin-right: 4px;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .single-select-image {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .single-select-image-option {
+    width: calc(33.33% - 16px);
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .single-select-image-option {
+    width: calc(25% - 16px);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .bubble-select-container {
+    justify-content: flex-start;
+  }
+}

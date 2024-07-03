@@ -1,0 +1,142 @@
+{
+  "1": {
+    "question": "Was ist Ihre bevorzugte Sprache?",
+    "subtitle": "Sprache wählen",
+    "entity": "single-select",
+    "options": [
+      {
+        "value": "en",
+        "label": "Englisch"
+      },
+      {
+        "value": "fr",
+        "label": "Französisch"
+      },
+      {
+        "value": "de",
+        "label": "Deutsch"
+      },
+      {
+        "value": "sp",
+        "label": "Spanisch"
+      }
+    ]
+  },
+  "2": {
+    "question": "Mit welchem Geschlecht identifizieren Sie sich?",
+    "subtitle": "Bitte teilen Sie mit, wie Sie sich selbst identifizieren",
+    "entity": "single-select-image",
+    "options": [
+      {
+        "value": "female",
+        "label": "Weiblich"
+      },
+      {
+        "value": "male",
+        "label": "Männlich"
+      },
+      {
+        "value": "other",
+        "label": "Andere"
+      }
+    ]
+  },
+  "3": {
+    "question": "Wie alt sind Sie?",
+    "subtitle": "",
+    "entity": "single-select",
+    "options": [
+      {
+        "value": "18-29",
+        "label": "18-29 Jahre"
+      },
+      {
+        "value": "30-39",
+        "label": "30-39 Jahre"
+      },
+      {
+        "value": "40-49",
+        "label": "40-49 Jahre"
+      },
+      {
+        "value": "50+",
+        "label": "50+"
+      }
+    ]
+  },
+  "4": {
+    "question": "Was stört Sie am meisten in einem Buch?",
+    "subtitle": "",
+    "entity": "multiple-select",
+    "options": [
+      {
+        "value": "lack of logic",
+        "label": "Mangel an Logik"
+      },
+      {
+        "value": "a slow speed",
+        "label": "Langsamkeit"
+      },
+      {
+        "value": "lack of humor",
+        "label": "Fehlen von Humor"
+      },
+      {
+        "value": "way to generic ending",
+        "label": "Zu generisches Ende"
+      }
+    ]
+  },
+  "5": {
+    "question": "Was sind Ihre Lieblingsthemen?",
+    "subtitle": "Wählen Sie bis zu 3 Themen, die Ihnen gefallen",
+    "entity": "bubble-select",
+    "options": [
+      {
+        "value": "werewolf",
+        "label": "Werewolf"
+      },
+      {
+        "value": "action",
+        "label": "Action"
+      },
+      {
+        "value": "royal obsession",
+        "label": "Königliche Obsession"
+      },
+      {
+        "value": "romance",
+        "label": "Romantik"
+      },
+      {
+        "value": "young adult",
+        "label": "Jugendlich"
+      },
+      {
+        "value": "bad boy",
+        "label": "Bad Boy"
+      },
+      {
+        "value": "billionaire",
+        "label": "Milliardär"
+      }
+    ]
+  },
+  "loader": {
+    "label": "Sammlung wird gesucht für <br /> dich..."
+  },
+  "email": {
+    "title": "Email",
+    "subtitle": "Geben Sie Ihre E-Mail-Adresse ein, um vollen Zugang zu erhalten",
+    "placeholder": "Ihre E-Mail-Adresse",
+    "policy": "Indem ich fortfahre, stimme ich der <a href=\"#\" className=\"form-link\">Datenschutzerklärung</a> und den <a href=\"#\" className=\"form-link\">Nutzungsbedingungen</a> zu.",
+    "error": "Ungültige E-Mail-Adresse"
+  },
+  "thankyou": {
+    "title": "Vielen Dank",
+    "subtitle": "für Ihre Unterstützung und das Bestehen des Quiz",
+    "download": "Meine Antworten herunterladen"
+  },
+  "nextButton": "Weiter",
+  "retakeQuiz": "Quiz wiederholen"
+}

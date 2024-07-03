@@ -1,0 +1,142 @@
+{
+  "1": {
+    "question": "Quelle est votre langue préférée?",
+    "subtitle": "Choisissez la langue",
+    "entity": "single-select",
+    "options": [
+      {
+        "value": "en",
+        "label": "Anglais"
+      },
+      {
+        "value": "fr",
+        "label": "Français"
+      },
+      {
+        "value": "de",
+        "label": "Allemand"
+      },
+      {
+        "value": "sp",
+        "label": "Espagnol"
+      }
+    ]
+  },
+  "2": {
+    "question": "À quel genre vous identifiez-vous?",
+    "subtitle": "Veuillez indiquer comment vous vous identifiez",
+    "entity": "single-select-image",
+    "options": [
+      {
+        "value": "female",
+        "label": "Féminin"
+      },
+      {
+        "value": "male",
+        "label": "Masculin"
+      },
+      {
+        "value": "other",
+        "label": "Autre"
+      }
+    ]
+  },
+  "3": {
+    "question": "Quel âge avez-vous?",
+    "subtitle": "",
+    "entity": "single-select",
+    "options": [
+      {
+        "value": "18-29",
+        "label": "18-29 ans"
+      },
+      {
+        "value": "30-39",
+        "label": "30-39 ans"
+      },
+      {
+        "value": "40-49",
+        "label": "40-49 ans"
+      },
+      {
+        "value": "50+",
+        "label": "50+"
+      }
+    ]
+  },
+  "4": {
+    "question": "Qu'est-ce que vous détestez le plus dans un livre?",
+    "subtitle": "",
+    "entity": "multiple-select",
+    "options": [
+      {
+        "value": "lack of logic",
+        "label": "Manque de logique"
+      },
+      {
+        "value": "a slow speed",
+        "label": "Lenteur"
+      },
+      {
+        "value": "lack of humor",
+        "label": "Manque d'humour"
+      },
+      {
+        "value": "way to generic ending",
+        "label": "Fin trop générique"
+      }
+    ]
+  },
+  "5": {
+    "question": "Quels sont vos sujets préférés?",
+    "subtitle": "Choisissez jusqu'à 3 sujets que vous aimez",
+    "entity": "bubble-select",
+    "options": [
+      {
+        "value": "werewolf",
+        "label": "Loup-garou"
+      },
+      {
+        "value": "action",
+        "label": "Action"
+      },
+      {
+        "value": "royal obsession",
+        "label": "Obsession royale"
+      },
+      {
+        "value": "romance",
+        "label": "Romance"
+      },
+      {
+        "value": "young adult",
+        "label": "Jeune adulte"
+      },
+      {
+        "value": "bad boy",
+        "label": "Mauvais garçon"
+      },
+      {
+        "value": "billionaire",
+        "label": "Milliardaire"
+      }
+    ]
+  },
+  "loader": {
+    "label": "Recherche de la collection pour <br /> vous..."
+  },
+  "email": {
+    "title": "Email",
+    "subtitle": "Entrez votre adresse e-mail pour accéder complètement",
+    "placeholder": "Votre adresse e-mail",
+    "policy": "En continuant, j'accepte la <a href=\"#\" className=\"form-link\">Politique de confidentialité</a> et les <a href=\"#\" className=\"form-link\">Conditions d'utilisation</a>.",
+    "error": "Adresse e-mail invalide"
+  },
+  "thankyou": {
+    "title": "Merci",
+    "subtitle": "pour votre soutien et avoir réussi le quiz",
+    "download": "Télécharger mes réponses"
+  },
+  "nextButton": "Suivant",
+  "retakeQuiz": "Recommencer le quiz"
+}
