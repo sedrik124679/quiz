@@ -3,11 +3,12 @@ import { Trans } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { Routes } from "../constants/enums.ts";
 
+const progressEndValue = 100;
+const speed = 35;
+
 const Loader = () => {
     const navigate = useNavigate();
     const [progress, setProgress] = React.useState(0);
-    const progressEndValue = 100;
-    const speed = 35;
 
     React.useEffect(() => {
         const interval = setInterval(() => {

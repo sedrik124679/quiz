@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import ProgressBar from "./ProgressBar.tsx";
 import Loader from "./Loader.tsx";
 import Select from "./Select.tsx";
-import { Question } from "../types";
+import { Option, Question } from "../types";
 import { useQuizContext } from "../Providers/QuizProvider.tsx";
 
 interface QuizProps {}
@@ -23,7 +23,7 @@ const Quiz: React.FC<QuizProps> = ({ }) => {
 
     const { question: title, subtitle, entity } = question;
 
-    const handleChange = React.useCallback((answers: any) => {
+    const handleChange = React.useCallback((answers: Option[]) => {
         handleChangeAnswers({ id, entity, title, answers })
 
         if (+id === 1) {

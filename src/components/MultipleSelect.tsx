@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React from "react";
 import NextButton from "./NextButton.tsx";
 import { Option } from "../types";
 
@@ -19,7 +19,7 @@ const MultipleSelect: React.FC<MultipleSelectProps> = ({ options, handleChange }
         );
     };
 
-    const handleClick = useCallback(() => handleChange(selectedOptions), [selectedOptions]);
+    const handleClick = React.useCallback(() => handleChange(selectedOptions), [selectedOptions]);
 
     return (
         <div>
