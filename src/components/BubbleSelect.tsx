@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React from "react";
 import NextButton from "./NextButton.tsx";
 import { chunkArray } from "../utils";
 import { Option } from "../types";
@@ -12,7 +12,7 @@ import Billionaire from "../assets/Topic/Billionaire.svg";
 
 interface BubbleSelectProps {
     options: Option[],
-    handleChange: (answers: any) => void;
+    handleChange: (answers: Option[]) => void;
 }
 
 const bubbleImages = [[Werewolf, Action], [Royal, Romance], [Adult, BadBoy], [Billionaire]];
@@ -22,9 +22,7 @@ const BubbleSelect: React.FC<BubbleSelectProps> = ({ options, handleChange }) =>
 
     const [selectedOptions, setSelectedOptions] = React.useState<Option[]>([]);
 
-    const handledOptions = React.useMemo(() => {
-        return chunkArray(localeOptions, 2);
-    }, [localeOptions, options]);
+    const handledOptions = React.useMemo(() => chunkArray(localeOptions, 2), [localeOptions, options]);
 
     const handleSelectChange = (option: Option) => {
         setSelectedOptions((prev) => {
@@ -38,7 +36,7 @@ const BubbleSelect: React.FC<BubbleSelectProps> = ({ options, handleChange }) =>
         });
     };
 
-    const handleClick = useCallback(() => handleChange(selectedOptions), [selectedOptions]);
+    const handleClick = React.useCallback(() => handleChange(selectedOptions), [selectedOptions]);
 
     return (
         <div className="bubble-select">

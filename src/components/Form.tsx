@@ -6,6 +6,7 @@ import { validateEmail } from "../utils";
 import { useQuizContext } from "../Providers/QuizProvider.tsx";
 
 import Menu from "../assets/O.svg";
+import { Routes } from "../constants/enums.ts";
 
 interface FormProps {}
 
@@ -29,7 +30,7 @@ const Form: React.FC<FormProps> = ({  }) => {
                 title: "Email"
             });
             setError("");
-            navigate("/thankyou");
+            navigate(Routes.thankyou);
         }
     };
 

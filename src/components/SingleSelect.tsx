@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React from "react";
 import { Option } from "../types";
 
 interface SingleSelectProps {
@@ -7,9 +7,9 @@ interface SingleSelectProps {
 }
 
 const SingleSelect: React.FC<SingleSelectProps> = ({ options, handleChange  }) => {
-    const [localeOptions] = useState(options);
+    const [localeOptions] = React.useState(options);
 
-    const memoOptions = useMemo(() => {
+    const memoOptions = React.useMemo(() => {
         return localeOptions.map((option) => option);
     }, [localeOptions, options]);
 

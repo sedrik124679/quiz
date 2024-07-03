@@ -5,11 +5,12 @@ import BubbleSelect from "./BubbleSelect.tsx";
 import MultipleSelect from "./MultipleSelect.tsx";
 import SingleSelect from "./SingleSelect.tsx";
 
-import { Entities, Question } from "../types";
+import { Option, Question } from "../types";
+import { Entities } from "../constants/enums.ts";
 
 interface SelectProps {
     question: Question,
-    handleChange: (answers: any) => void;
+    handleChange: (answers: Option[]) => void;
 }
 
 const Select: React.FC<SelectProps> = ({ question, handleChange }) => {

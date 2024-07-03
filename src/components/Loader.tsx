@@ -1,6 +1,7 @@
 import React from "react";
 import { Trans } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { Routes } from "../constants/enums.ts";
 
 const Loader = () => {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Loader = () => {
             setProgress(prev => {
                 if (prev >= progressEndValue) {
                     clearInterval(interval);
-                    navigate('/email');
+                    navigate(Routes.email);
                     return prev;
                 }
                 return prev + 1;
