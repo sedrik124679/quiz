@@ -54,7 +54,7 @@ const Form: React.FC<FormProps> = ({  }) => {
             </div>
 
             <NextButton
-                disabled={false}
+                disabled={!email.length}
                 onClick={handleNextClick}
             />
         </div>
