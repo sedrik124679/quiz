@@ -29,7 +29,7 @@ const MultipleSelect: React.FC<MultipleSelectProps> = ({ options, handleChange }
                     return (
                         <label
                             className={`multiple-select-option ${
-                                selectedOptions.find((item) => item.value === option.value) 
+                                selectedOptions.find((item) => item.value === value) 
                                     ? "multiple-select-option-selected" 
                                     : ""
                             }`}

@@ -1,5 +1,5 @@
 import React, { CSSProperties } from "react";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 interface NextButtonProps {
     disabled: boolean,

@@ -6,6 +6,14 @@ export enum Entities {
 }
 
 export enum Routes {
-    thankyou = "/thankyou",
+    default = "/",
+    thankYou = "/thankyou",
     email = "/email",
+    firstPage = "/quiz/1",
+    quizPage = "/quiz/:id",
+}
+
+export enum LocalStorageKeys {
+    language = "language",
+    answers = "answers",
 }

@@ -13,3 +13,16 @@ export const validateEmail = (email: string) => {
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
 };
+
+export const downloadCSVFile = (dataset: string) => {
+    const encodedUri = encodeURI(`data:text/csv;charset=utf-8,${dataset}`);
+    const link = document.createElement("a");
+
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "answers.csv");
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+}

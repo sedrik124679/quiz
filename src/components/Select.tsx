@@ -20,44 +20,43 @@ const Select: React.FC<SelectProps> = ({ question, handleChange }) => {
         return options;
     }, [options])
 
-    switch (entity){
-        case Entities.singleSelectImage:
-            const imagesSelectOptions = localeOptions.map((option) => {
-               return { ...option }
-            });
+    switch (entity) {
+        case Entities.singleSelectImage: {
+            const options = localeOptions.map((option) => ({ ...option }));
             return (
                 <SingleSelectImage
-                    options={imagesSelectOptions}
+                    options={options}
                     handleChange={handleChange}
                 />
             )
-        case Entities.bubbleSelect:
-            const bubblesSelectOptions = localeOptions.map((option) => {
-                return { ...option }
-            });
+        }
+        case Entities.bubbleSelect: {
+            const options = localeOptions.map((option) => ({ ...option }));
             return (
                 <BubbleSelect
-                    options={bubblesSelectOptions}
+                    options={options}
                     handleChange={handleChange}
                 />
             )
-        case Entities.multipleSelect:
-            const multipleSelectOptions = localeOptions.map((option) => ({ ...option }));
+        }
+        case Entities.multipleSelect: {
+            const options = localeOptions.map((option) => ({ ...option }));
             return (
                 <MultipleSelect
-                    options={multipleSelectOptions}
+                    options={options}
                     handleChange={handleChange}
                 />
             )
-        default:
-            const singleSelectOptions = localeOptions.map((option) => ({ ...option }));
-
+        }
+        default: {
+            const options = localeOptions.map((option) => ({ ...option }));
             return (
                 <SingleSelect
                     handleChange={handleChange}
-                    options={singleSelectOptions}
+                    options={options}
                 />
             )
+        }
     }
 };
 

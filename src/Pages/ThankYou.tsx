@@ -4,13 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 import CheckMark from "../assets/checkmark.svg";
 import Download from "../assets/download.svg";
-import NextButton from "./NextButton.tsx";
+import NextButton from "../components/NextButton.tsx";
 import Menu from "../assets/O.svg";
-import {useQuizContext} from "../Providers/QuizProvider.tsx";
+import { useQuizContext } from "../Providers/QuizProvider.tsx";
+import { downloadCSVFile } from "../utils";
 
 interface ThankYouProps {}
 
-const ThankYou: React.FC<ThankYouProps> = ({  }) => {
+const ThankYou: React.FC<ThankYouProps> = ({}) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const { selectedAnswers, setSelectedAnswers } = useQuizContext();
@@ -26,18 +27,8 @@ const ThankYou: React.FC<ThankYouProps> = ({  }) => {
             return `${acc}${answer.id},${answer.title},${answer.entity},"${answers}"\n`;
         }, "order,title,type,answer\n");
 
-        const encodedUri = encodeURI(`data:text/csv;charset=utf-8,${csvContent}`);
-        const link = document.createElement("a");
-
-        link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "answers.csv");
-        document.body.appendChild(link);
-
-        link.click();
-
-        document.body.removeChild(link);
+        downloadCSVFile(csvContent);
     }, [selectedAnswers]);
-
 
     return (
         <div className="thanku-container">

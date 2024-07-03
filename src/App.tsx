@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import { QuizProvider } from "./Providers/QuizProvider.tsx";
-import Quiz from "./components/Quiz.tsx";
-import Form from "./components/Form.tsx";
-import ThankYou from "./components/ThankYou.tsx";
+import Quiz from "./Pages/Quiz.tsx";
+import Form from "./Pages/Form.tsx";
+import ThankYou from "./Pages/ThankYou.tsx";
+import { Routes as RoutesEnum} from "./constants/enums.ts";
 
 function App() {
     return (
@@ -11,10 +12,10 @@ function App() {
             <BrowserRouter>
                 <QuizProvider>
                     <Routes>
-                        <Route path="/" element={<Navigate to="/quiz/1" />} />
-                        <Route path="/quiz/:id" element={<Quiz/>} />
-                        <Route path="/email" element={<Form />} />
-                        <Route path="/thankyou" element={<ThankYou />} />
+                        <Route path={RoutesEnum.default} element={<Navigate to={RoutesEnum.firstPage} />} />
+                        <Route path={RoutesEnum.quizPage} element={<Quiz/>} />
+                        <Route path={RoutesEnum.email} element={<Form />} />
+                        <Route path={RoutesEnum.thankYou} element={<ThankYou />} />
                     </Routes>
                 </QuizProvider>
             </BrowserRouter>

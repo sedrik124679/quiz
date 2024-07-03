@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import ProgressBar from "./ProgressBar.tsx";
-import Loader from "./Loader.tsx";
-import Select from "./Select.tsx";
+import ProgressBar from "../components/ProgressBar.tsx";
+import Loader from "../components/Loader.tsx";
+import Select from "../components/Select.tsx";
 import { Option, Question } from "../types";
 import { useQuizContext } from "../Providers/QuizProvider.tsx";
 
@@ -26,13 +26,13 @@ const Quiz: React.FC<QuizProps> = ({ }) => {
     const handleChange = React.useCallback((answers: Option[]) => {
         handleChangeAnswers({ id, entity, title, answers })
 
-        if (+id === 1) {
+        if (Number(id) === 1) {
             const { value } = answers[0];
 
             handleChangeLanguage(value);
         }
 
-        if (+id + 1 <= 5) {
+        if (Number(id) + 1 <= 5) {
             navigate(`/quiz/${+id + 1}`);
         } else {
             setIsLoading(true);
@@ -40,12 +40,12 @@ const Quiz: React.FC<QuizProps> = ({ }) => {
 
     }, [entity, selectedAnswers, handleChangeAnswers]);
 
-    if (isLoading) return <Loader />
+    if (isLoading) return <Loader />;
 
     return (
-        <Fragment>
+        <React.Fragment>
             <ProgressBar
-                currentQuestion={+id}
+                currentQuestion={Number(id)}
                 totalQuestions={5}
             />
             {title && (
@@ -60,7 +60,7 @@ const Quiz: React.FC<QuizProps> = ({ }) => {
                 question={question}
                 handleChange={handleChange}
             />
-        </Fragment>
+        </React.Fragment>
     );
 };
 

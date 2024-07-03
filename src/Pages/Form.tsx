@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Trans, useTranslation } from "react-i18next";
-import NextButton from "./NextButton.tsx";
+import NextButton from "../components/NextButton.tsx";
 import { validateEmail } from "../utils";
 import { useQuizContext } from "../Providers/QuizProvider.tsx";
 
@@ -30,7 +30,7 @@ const Form: React.FC<FormProps> = ({  }) => {
                 title: "Email"
             });
             setError("");
-            navigate(Routes.thankyou);
+            navigate(Routes.thankYou);
         }
     };
 

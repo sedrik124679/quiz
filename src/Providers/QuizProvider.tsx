@@ -1,6 +1,7 @@
 import React, { createContext, useContext } from "react";
 import { Answer } from "../types";
 import { useTranslation } from "react-i18next";
+import {LocalStorageKeys} from "../constants/enums.ts";
 
 interface QuizContextType {
     selectedAnswers: Answer[];
@@ -16,18 +17,18 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const { i18n } = useTranslation();
 
     React.useEffect(() => {
-        const storedAnswers = localStorage.getItem('answers');
+        const storedAnswers = localStorage.getItem(LocalStorageKeys.answers);
         if (storedAnswers) {
             setSelectedAnswers(JSON.parse(storedAnswers));
         }
-        const storedLanguage = localStorage.getItem('language');
+        const storedLanguage = localStorage.getItem(LocalStorageKeys.language);
         if (storedAnswers) {
             i18n.changeLanguage(storedLanguage as string);
         }
     }, []);
 
     React.useEffect(() => {
-        localStorage.setItem('answers', JSON.stringify(selectedAnswers));
+        localStorage.setItem(LocalStorageKeys.answers, JSON.stringify(selectedAnswers));
     }, [selectedAnswers]);
 
     const handleChangeAnswers = React.useCallback((userAnswer: Answer) => {
@@ -47,7 +48,7 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const handleChangeLanguage = (value: string) => {
         i18n.changeLanguage(value);
-        localStorage.setItem('language', value);
+        localStorage.setItem(LocalStorageKeys.language, value);
     };
 
     const contextValue: QuizContextType = {
