@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import { QuizProvider } from "./Providers/QuizProvider.tsx";
 import Quiz from "./Pages/Quiz.tsx";
@@ -9,7 +9,7 @@ import { Routes as RoutesEnum} from "./constants/enums.ts";
 function App() {
     return (
         <main>
-            <BrowserRouter>
+            <HashRouter>
                 <QuizProvider>
                     <Routes>
                         <Route path={RoutesEnum.default} element={<Navigate to={RoutesEnum.firstPage} />} />
@@ -18,7 +18,7 @@ function App() {
                         <Route path={RoutesEnum.thankYou} element={<ThankYou />} />
                     </Routes>
                 </QuizProvider>
-            </BrowserRouter>
+            </HashRouter>
         </main>
     )
 }
