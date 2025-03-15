@@ -12,7 +12,7 @@ const Loader = () => {
 
     React.useEffect(() => {
         const interval = setInterval(() => {
-            setProgress(prev => {
+            setProgress((prev) => {
                 if (prev >= progressEndValue) {
                     clearInterval(interval);
                     navigate(Routes.email);
@@ -30,8 +30,10 @@ const Loader = () => {
     return (
         <div className="loader-container">
             <div className="spinner-container">
-                <div className="circular-progress"
-                     style={{background: `conic-gradient(#E4229C ${progress * 3.6}deg, #ededed 0deg)`}}>
+                <div
+                    className="circular-progress"
+                    style={{ background: `conic-gradient(#E4229C ${progress * 3.6}deg, #ededed 0deg)` }}
+                >
                     <div className="progress-value">{`${progress}%`}</div>
                 </div>
             </div>

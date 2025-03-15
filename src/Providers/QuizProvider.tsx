@@ -1,16 +1,16 @@
-import React, { createContext, useContext } from "react";
-import { Answer } from "../types";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import {LocalStorageKeys} from "../constants/enums.ts";
+import { LocalStorageKeys } from "../constants/enums.ts";
+import { Answer } from "../types";
 
-interface QuizContextType {
+type QuizContextType = {
     selectedAnswers: Answer[];
     setSelectedAnswers: React.Dispatch<React.SetStateAction<Answer[]>>;
-    handleChangeLanguage: (lng: string) => void,
-    handleChangeAnswers: (answer: Answer) => void,
-}
+    handleChangeLanguage: (lng: string) => void;
+    handleChangeAnswers: (answer: Answer) => void;
+};
 
-const QuizContext = createContext<QuizContextType | undefined>(undefined);
+const QuizContext = React.createContext<QuizContextType | undefined>(undefined);
 
 export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [selectedAnswers, setSelectedAnswers] = React.useState<Answer[]>([]);
@@ -55,20 +55,16 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
         selectedAnswers,
         setSelectedAnswers,
         handleChangeLanguage,
-        handleChangeAnswers,
+        handleChangeAnswers
     };
 
-    return (
-        <QuizContext.Provider value={contextValue}>
-            {children}
-        </QuizContext.Provider>
-    );
+    return <QuizContext.Provider value={contextValue}>{children}</QuizContext.Provider>;
 };
 
 export const useQuizContext = () => {
-    const context = useContext(QuizContext);
+    const context = React.useContext(QuizContext);
     if (!context) {
-        throw new Error('useQuizContext must be used within a QuizProvider');
+        throw new Error("useQuizContext must be used within a QuizProvider");
     }
     return context;
 };

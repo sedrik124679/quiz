@@ -1,12 +1,12 @@
 import React from "react";
 import { Option } from "../types";
 
-interface SingleSelectProps {
-    options: Option[],
-    handleChange: (answers: Option[]) => void,
-}
+type SingleSelectProps = {
+    options: Option[];
+    handleChange: (answers: Option[]) => void;
+};
 
-const SingleSelect: React.FC<SingleSelectProps> = ({ options, handleChange  }) => {
+const SingleSelect: React.FC<SingleSelectProps> = ({ options, handleChange }) => {
     const [localeOptions] = React.useState(options);
 
     const memoOptions = React.useMemo(() => {
@@ -18,14 +18,10 @@ const SingleSelect: React.FC<SingleSelectProps> = ({ options, handleChange  }) =
             {memoOptions.map((option) => {
                 const { value, label } = option;
                 return (
-                    <div
-                        key={value}
-                        className="single-select-option"
-                        onClick={() => handleChange([option])}
-                    >
+                    <div key={value} className="single-select-option" onClick={() => handleChange([option])}>
                         {label}
                     </div>
-                )
+                );
             })}
         </div>
     );

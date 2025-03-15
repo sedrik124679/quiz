@@ -7,11 +7,10 @@ export const chunkArray = (array: any[], chunkSize: number) => {
 };
 
 export const validateEmail = (email: string) => {
-    return email
-        .toLowerCase()
-        .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
+    return email.toLowerCase().match(
+        // eslint-disable-next-line max-len
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
 };
 
 export const downloadCSVFile = (dataset: string) => {
@@ -25,4 +24,4 @@ export const downloadCSVFile = (dataset: string) => {
     link.click();
 
     document.body.removeChild(link);
-}
+};

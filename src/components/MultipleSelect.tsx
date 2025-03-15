@@ -2,10 +2,10 @@ import React from "react";
 import NextButton from "./NextButton.tsx";
 import { Option } from "../types";
 
-interface MultipleSelectProps {
-    options: Option[],
-    handleChange: (answers: Option[]) => void,
-}
+type MultipleSelectProps = {
+    options: Option[];
+    handleChange: (answers: Option[]) => void;
+};
 
 const MultipleSelect: React.FC<MultipleSelectProps> = ({ options, handleChange }) => {
     const [localeOptions] = React.useState(options);
@@ -29,8 +29,8 @@ const MultipleSelect: React.FC<MultipleSelectProps> = ({ options, handleChange }
                     return (
                         <label
                             className={`multiple-select-option ${
-                                selectedOptions.find((item) => item.value === value) 
-                                    ? "multiple-select-option-selected" 
+                                selectedOptions.find((item) => item.value === value)
+                                    ? "multiple-select-option-selected"
                                     : ""
                             }`}
                             key={value}
@@ -42,15 +42,12 @@ const MultipleSelect: React.FC<MultipleSelectProps> = ({ options, handleChange }
                                 className="multiple-select-checkbox"
                                 onChange={() => handleCheckboxChange(option)}
                             />
-                            <span className="multiple-select-checkbox-box"/>
+                            <span className="multiple-select-checkbox-box" />
                         </label>
-                    )
+                    );
                 })}
             </div>
-            <NextButton
-                disabled={!selectedOptions.length}
-                onClick={handleClick}
-            />
+            <NextButton disabled={!selectedOptions.length} onClick={handleClick} />
         </div>
     );
 };

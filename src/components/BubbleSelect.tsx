@@ -1,19 +1,19 @@
 import React from "react";
 import NextButton from "./NextButton.tsx";
-import { chunkArray } from "../utils";
-import { Option } from "../types";
-import Werewolf from "../assets/Topic/Werewolf.svg";
 import Action from "../assets/Topic/Actions.svg";
-import Royal from "../assets/Topic/Royal.svg";
-import Romance from "../assets/Topic/Romance.svg";
 import Adult from "../assets/Topic/Adult.svg";
 import BadBoy from "../assets/Topic/Badboy.svg";
 import Billionaire from "../assets/Topic/Billionaire.svg";
+import Romance from "../assets/Topic/Romance.svg";
+import Royal from "../assets/Topic/Royal.svg";
+import Werewolf from "../assets/Topic/Werewolf.svg";
+import { Option } from "../types";
+import { chunkArray } from "../utils";
 
-interface BubbleSelectProps {
-    options: Option[],
+type BubbleSelectProps = {
+    options: Option[];
     handleChange: (answers: Option[]) => void;
-}
+};
 
 const bubbleImages = [[Werewolf, Action], [Royal, Romance], [Adult, BadBoy], [Billionaire]];
 
@@ -46,11 +46,12 @@ const BubbleSelect: React.FC<BubbleSelectProps> = ({ options, handleChange }) =>
                         <div
                             key={`${index}-${options[0].value}`}
                             style={{
-                                marginTop: options.length === 1 && index === handledOptions.length - 1
-                                    ? "-12px"
-                                    : index % 2 !== 0
-                                        ? "24px"
-                                        : "0",
+                                marginTop:
+                                    options.length === 1 && index === handledOptions.length - 1
+                                        ? "-12px"
+                                        : index % 2 !== 0
+                                          ? "24px"
+                                          : "0"
                             }}
                             className="option-group"
                         >
@@ -59,13 +60,12 @@ const BubbleSelect: React.FC<BubbleSelectProps> = ({ options, handleChange }) =>
                                 return (
                                     <div
                                         key={label}
-                                        className={`option ${selectedOptions.find((item) => item.value === value) 
-                                            ? "selected" 
-                                            : ""
+                                        className={`option ${
+                                            selectedOptions.find((item) => item.value === value) ? "selected" : ""
                                         }`}
                                         onClick={() => handleSelectChange({ label, value })}
                                     >
-                                        <img src={bubbleImages[index][i] as string} alt={label}/>
+                                        <img src={bubbleImages[index][i] as string} alt={label} />
                                         <span>{label}</span>
                                     </div>
                                 );
@@ -74,10 +74,7 @@ const BubbleSelect: React.FC<BubbleSelectProps> = ({ options, handleChange }) =>
                     );
                 })}
             </div>
-            <NextButton
-                disabled={!selectedOptions.length}
-                onClick={handleClick}
-            />
+            <NextButton disabled={!selectedOptions.length} onClick={handleClick} />
         </div>
     );
 };
